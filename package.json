@@ -1,0 +1,38 @@
+{
+  "name": "zadanie_15_6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "start:server": "http-server",
+    "start": "babel js/script.js --watch --out-file js/script-compiled.js",
+    "test": "eslint --init",
+    "build": "babel js/script.js --watch --out-file js/script-compiled.js",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:autoprefixer": "autoprefixer-cli css/styles.css",
+    "watch": "parallelshell  \"npm run watch:sassprefixer\" \"npm run watch:browser-sync\" ",
+    "watch:sassprefixer": "onchange sass/*.scss -- parallelshell \"npm run build:sass\" \"npm run build:autoprefixer\" ",
+    "watch:browser-sync": "browser-sync start --server --files \"css/*.css\" \"*.html\" --serveStatic \"./\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-standalone": "^6.26.0"
+  },
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.23.6",
+    "eslint": "^4.18.2",
+    "eslint-config-google": "^0.9.1",
+    "http-server": "^0.11.1",
+    "node-sass": "^4.7.2",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2"
+  }
+}

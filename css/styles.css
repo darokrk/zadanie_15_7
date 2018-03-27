@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body { background: #555555; color: #fff; }
+
+.container { text-align: center; margin: 170px auto; }
+
+.container .button { margin: 10px; padding: 10px; font-size: 35px; text-decoration: none; color: inherit; border-radius: 10%; display: inline-block; }
+
+.container .stopwatch { font-family: 'Roboto', sans-serif; font-size: 72px; }
+
+.container .results { font-size: 22px; padding: 0; }
+
+.container .results li { display: block; }
